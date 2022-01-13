@@ -3,6 +3,7 @@
 do we pop the card off the list and remove it?
 """
 import deck_utilities as deck
+import poker_utilities as poker_utils
 
 
 def run():
@@ -18,8 +19,19 @@ def run():
         if len(cards) <= 5:
             cards = deck.get_deck()
             cards = deck.shuffle(cards)
+
         hand = deck.deal_hand(cards)
-        print(deck.print_as_str(hand))
+
+        if poker_utils.classify_flush(hand):
+            num_flushes += 1
+        elif poker_utils.is_two_pair(hand):
+            num_2_pairs += 1
+        elif poker_utils.is_pair(hand):
+            num_pairs += 1
+        else:
+            num_high_cards += 1
+
+    print(num_flushes,  num_2_pairs, num_pairs, num_high_cards)
 
 
 if __name__ == '__main__':

@@ -47,14 +47,15 @@ def deal(deck):
     return deck.pop(random.randint(0, len(deck) - 1))
 
 
-def deal_hand(deck):
+def deal_hand(deck, num_of_cards=5):
     """
-    given a deck, deal a full hand for Poker
-    :param deck:
-    :return:
+    given a deck and the number of cards, deal the num of cards off the top of the deck and return a list
+    :param num_of_cards: the number of cards to deal
+    :param deck: the deck of cards to be used to deal
+    :return: a list of the cards from the top of the deck
     """
     hand = []
-    for _ in range(0, 5):
+    for _ in range(0, num_of_cards):
         hand.append(deal(deck))
 
     return hand
