@@ -20,7 +20,7 @@ def print_row(data):
     :return:
     """
 
-    print("{:>10}  {:>8}  {:0>5.2f}  {:>10}  {:0>5.2f}  {:>10}  {:0>5.2f}  {:>10}  {:0>5.2f}".format(
+    print("{:>10,d}  {:>8}  {:0>5.2f}  {:>10}  {:0>5.2f}  {:>10}  {:0>5.2f}  {:>10}  {:0>5.2f}".format(
         data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8]
     ))
 
