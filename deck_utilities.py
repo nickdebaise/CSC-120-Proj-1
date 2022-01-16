@@ -1,5 +1,6 @@
 """
-
+Functions for creating, shuffling, dealing, and printing a deck/hands in a deck
+Author: Nick DeBaise
 """
 import random
 
@@ -8,10 +9,9 @@ import card_utilities as cards
 
 def get_deck():
     """
-    Create and return a list of cards
+    Create and return a list of 52 standard playing cards
     :return: a list of cards
     """
-
     deck = []
 
     for i in range(1, 5):
@@ -40,7 +40,7 @@ def shuffle(deck):
 
 def deal(deck):
     """
-    Given a deck, deal one card from the top and return it
+    Given a deck, deal one card from the top (removes it from the deck) and return the card
     :param deck: the deck (list) of cards
     :return: a card
     """
@@ -49,9 +49,9 @@ def deal(deck):
 
 def deal_hand(deck, num_of_cards=5):
     """
-    given a deck and the number of cards, deal the num of cards off the top of the deck and return a list
+    given a deck and a number of cards, deal the num of cards off the top of the deck and return that new list
+    :param deck: the list of cards to be used to deal
     :param num_of_cards: the number of cards to deal
-    :param deck: the deck of cards to be used to deal
     :return: a list of the cards from the top of the deck
     """
     hand = []

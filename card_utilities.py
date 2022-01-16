@@ -1,5 +1,6 @@
 """
-
+Functions for creating, getting, and printing a card
+Author: Nick DeBaise
 """
 from constants import suits
 
@@ -8,9 +9,9 @@ def create(value, suit):
     """
     Given a value and a suit, return a representation of a card
     containing the value and the suit
-    :param value: number of the card (1-13)
-    :param suit: suit of the card (1-4)
-    :return:
+    :param value: number (integer) of the card (1-13)
+    :param suit: suit (integer) of the card (1-4)
+    :return: a representation of a card with a value & suit
     """
     return (value, suit)
 

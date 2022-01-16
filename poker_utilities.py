@@ -1,8 +1,18 @@
 """
-
+Functions for classifying poker hands
+Author: Nick DeBaise
 """
 import card_utilities as card_utils
 import deck_utilities as deck_utils
+
+
+def sort_by_value(hand):
+    """
+    Given a hand/deck, sort it by increasing value (1 -> 13), disregarding suit
+    :param hand: the hand or deck (list) of card
+    :return: nothing
+    """
+    hand.sort(key=lambda card: card_utils.get_value(card))
 
 
 def put_in_dict(hand):
@@ -70,16 +80,7 @@ def is_two_pair(hand):
         if dict[key] == 3:
             is_three_kind = True
 
-    if is_three_kind and num_pairs == 1:
-        return True
-
-    if num_pairs >= 2:
-        return True
-
-    if is_four_kind:
-        return True
-
-    return False
+    return (is_three_kind and num_pairs == 1) or num_pairs >= 2 or is_four_kind
 
 
 def classify_flush(hand):
@@ -98,11 +99,11 @@ def is_continuous_hand(hand):
     """
     Given a standard 5 card poker hand, classify it if there are continuous cards
     :param hand: a standard 5 card poker hand
-    :return:  "straight" "flush" "royal flush" "straight flush" or None
+    :return: "straight" "flush" "royal flush" "straight flush" or None
     """
 
     # sort the list by value to make it easier
-    hand.sort(key=lambda card: card_utils.get_value(card))
+    sort_by_value(hand)
 
     is_same_suit = True
     possible_flush = True
@@ -120,6 +121,7 @@ def is_continuous_hand(hand):
             is_same_suit = False
 
         if card_val != val + 1:
+            # it's possible it could be royal flush (ace) and ace is seen as value = 1
             if not (card_val == 10 and val == 1):
                 possible_flush = False
         val = card_val
