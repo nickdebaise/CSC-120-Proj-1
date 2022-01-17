@@ -16,6 +16,9 @@ import poker_utilities as poker_utils
 
 
 def play_rounds():
+    """
+    Simulate rounds of poker
+    """
     cards = deck.get_deck()
     cards = deck.shuffle(cards)
 
