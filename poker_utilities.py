@@ -1,6 +1,14 @@
 """
 Functions for classifying poker hands
 Author: Nick DeBaise
+
+Note on refactor:
+    One of my functions (is_continuous_hand) contained logic for sorting, storing, and classifying
+    a flush. I decided to split that logic up into 3 different funcs, which proved helpful in the future.
+    The three new funcs are is_continuous_hand, put_in_dict (deck_utilities) and sort_by_value (deck_utilities)
+    These three funcs were useful as I reused them in other classification functions even though I wrote those
+    after refactoring. Initially, I had the 3 funcs all in poker_utils but thought that deck_utilities
+    would be a better place for put_in_dict and sort_by_value, so I refactored those out of this file.
 """
 import card_utilities as card_utils
 import deck_utilities as deck_utils

@@ -1,6 +1,11 @@
 """
 Functions for creating, shuffling, dealing, sorting, and printing a deck/hands in a deck
 Author: Nick DeBaise
+
+Note on refactor:
+    The only functions I refactored were put_in_dict and sort_by_value. I moved these funcs into this file
+    as I thought that these two functions only handled behaviour based on a deck/hand of cards (list)
+    They were better suited for this file.
 """
 import random
 
@@ -18,7 +23,7 @@ def put_in_dict(hand):
     dict = {}
 
     for card in hand:
-        val = str(card_utils.get_value(card))
+        val = str(cards.get_value(card))
 
         if val in dict.keys():
             dict[val] += 1

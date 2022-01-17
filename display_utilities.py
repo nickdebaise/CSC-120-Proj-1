@@ -1,6 +1,15 @@
 """
 Functions for printing card data in a table
 Author: Nick DeBaise
+
+Note on refactor:
+    I attempted to modularize many functions such as preparing the data, printing headers, printing rows
+    to ensure that, if in the future, more columns are added, data changes, headers change, etc, it becomes
+    easier to make those changes.
+    I think I could have modularized the print_row function a bit more by printing the pairs in the row
+    (eg. the number of cards paired with the percentage of those cards) to allow for more columns to be added easier
+    but, it also could add more complexity right now considering it may not be used in the future.
+
 """
 
 

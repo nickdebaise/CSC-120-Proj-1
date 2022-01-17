@@ -1,6 +1,13 @@
 """
 Functions for creating, getting, and printing a card
+
 Author: Nick DeBaise
+Note on Refactor:
+    I did not have to refactor this file. I gave the initial storing of the card some thought and decided a tuple
+    was the best option. This allowed me easy access when creating the getter methods, and it also
+    was an easy implementation. I think this made the functions very easy to write. It may have been more
+    readable to use a dictionary and store the card like {"value": value, "suit": suit} but it could have added
+    more complexity.
 """
 from constants import suits
 

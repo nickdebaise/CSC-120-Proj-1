@@ -1,8 +1,14 @@
 """
 Simulate games of poker to track different statistics on likelihood of hands
+
 Author: Nick DeBaise
 Note: I affirm that I have carried out the attached academic endeavors with full academic honesty,
         in accordance with the Union College Honor Code and the course syllabus.
+Note on refactor:
+    I gave a lot of thought to functions, behavior, and implementation before writing them which
+    ensured that I did not have to refactor a significant portion of my code. With that being said,
+    some functions required some refactoring due to too much logic in them or poor initial assessment
+    of what the function should do. These are noted at the top of each file in a comment.
 """
 import deck_utilities as deck
 import display_utilities as display_utils
