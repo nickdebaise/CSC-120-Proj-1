@@ -1,6 +1,8 @@
-# This is a sample Python script.
 """
-do we pop the card off the list and remove it?
+Simulate games of poker to track different statistics on likelihood of hands
+Author: Nick DeBaise
+Note: I affirm that I have carried out the attached academic endeavors with full academic honesty,
+        in accordance with the Union College Honor Code and the course syllabus.
 """
 import deck_utilities as deck
 import display_utilities as display_utils
