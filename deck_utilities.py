@@ -14,9 +14,9 @@ import card_utilities as cards
 
 def put_in_dict(hand):
     """
-    Given a 5 card poker hand, put all items into a dict with the keys as the values of the cards and the values being
-    the num of cards in the hand that match that value
-    :param hand: standard 5 card poker hand
+    Given a list of cards (usually a standard 5 card hand), put all items into a dict with the keys as the values of the
+    cards and the values being the num of cards in the hand that match that value
+    :param hand: poker hand (list of cards)
     :return: dict with keys as card values and values as number of that card in hand
     """
 
@@ -35,8 +35,8 @@ def put_in_dict(hand):
 
 def sort_by_value(hand):
     """
-    Given a hand/deck, sort it by increasing value (1 -> 13), disregarding suit
-    :param hand: the hand or deck (list) of card
+    Given a hand/deck (list of cards), sort it by increasing value (1 -> 13), disregarding suit
+    :param hand: the hand or deck (list) of cards
     :return: nothing
     """
 
@@ -86,16 +86,16 @@ def deal(deck):
     return deck.pop(random.randint(0, len(deck) - 1))
 
 
-def deal_hand(deck, num_of_cards=5):
+def deal_hand(deck, num_of_cards_in_hand=5):
     """
     given a deck and a number of cards, deal the num of cards off the top of the deck and return that new list
     :param deck: the list of cards to be used to deal
-    :param num_of_cards: the number of cards to deal
+    :param num_of_cards_in_hand: the number of cards to deal
     :return: a list of the cards from the top of the deck
     """
 
     hand = []
-    for _ in range(0, num_of_cards):
+    for _ in range(0, num_of_cards_in_hand):
         hand.append(deal(deck))
 
     return hand
