@@ -6,37 +6,6 @@ import card_utilities as card_utils
 import deck_utilities as deck_utils
 
 
-def sort_by_value(hand):
-    """
-    Given a hand/deck, sort it by increasing value (1 -> 13), disregarding suit
-    :param hand: the hand or deck (list) of card
-    :return: nothing
-    """
-
-    hand.sort(key=lambda card: card_utils.get_value(card))
-
-
-def put_in_dict(hand):
-    """
-    Given a 5 card poker hand, put all items into a dict with the keys as the values of the cards and the values being
-    the num of cards in the hand that match that value
-    :param hand: standard 5 card poker hand
-    :return: dict with keys as card values and values as number of that card in hand
-    """
-
-    dict = {}
-
-    for card in hand:
-        val = str(card_utils.get_value(card))
-
-        if val in dict.keys():
-            dict[val] += 1
-        else:
-            dict[val] = 1
-
-    return dict
-
-
 def is_pair(hand):
     """
     Given a standard 5 card poker hand, return whether there is a pair or three of a kind
@@ -44,7 +13,7 @@ def is_pair(hand):
     :return: True if there is one of those pairs, False if not
     """
 
-    dict = put_in_dict(hand)
+    dict = deck_utils.put_in_dict(hand)
 
     num_pairs = 0
     is_three_kind = False
@@ -66,7 +35,7 @@ def is_two_pair(hand):
     :return: True if there is one of those pairs, False if not
     """
 
-    dict = put_in_dict(hand)
+    dict = deck_utils.put_in_dict(hand)
 
     num_pairs = 0
     is_four_kind = False
@@ -106,7 +75,7 @@ def is_continuous_hand(hand):
     """
 
     # sort the list by value to make it easier
-    sort_by_value(hand)
+    deck_utils.sort_by_value(hand)
 
     is_same_suit = True
     possible_flush = True

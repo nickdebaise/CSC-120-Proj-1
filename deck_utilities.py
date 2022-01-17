@@ -1,10 +1,41 @@
 """
-Functions for creating, shuffling, dealing, and printing a deck/hands in a deck
+Functions for creating, shuffling, dealing, sorting, and printing a deck/hands in a deck
 Author: Nick DeBaise
 """
 import random
 
 import card_utilities as cards
+
+
+def put_in_dict(hand):
+    """
+    Given a 5 card poker hand, put all items into a dict with the keys as the values of the cards and the values being
+    the num of cards in the hand that match that value
+    :param hand: standard 5 card poker hand
+    :return: dict with keys as card values and values as number of that card in hand
+    """
+
+    dict = {}
+
+    for card in hand:
+        val = str(card_utils.get_value(card))
+
+        if val in dict.keys():
+            dict[val] += 1
+        else:
+            dict[val] = 1
+
+    return dict
+
+
+def sort_by_value(hand):
+    """
+    Given a hand/deck, sort it by increasing value (1 -> 13), disregarding suit
+    :param hand: the hand or deck (list) of card
+    :return: nothing
+    """
+
+    hand.sort(key=lambda card: cards.get_value(card))
 
 
 def get_deck():
