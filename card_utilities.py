@@ -13,6 +13,7 @@ def create(value, suit):
     :param suit: suit (integer) of the card (1-4)
     :return: a representation of a card with a value & suit
     """
+
     return (value, suit)
 
 
@@ -22,6 +23,7 @@ def get_value(card):
     :param card: the card object with value & suit
     :return: the number (integer) of the value of the card
     """
+
     return card[0]
 
 
@@ -31,6 +33,7 @@ def get_suit(card):
     :param card: the card object with value & suit
     :return: the number (integer) of the suit of the card
     """
+
     return card[1]
 
 
@@ -40,6 +43,7 @@ def as_str(card):
     :param card: the card object with value & suit
     :return: a string -> the prettified version of the card object
     """
+
     return "[{0}{1}]".format(card[0], suits[card[1] - 1])
 
 

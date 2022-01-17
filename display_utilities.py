@@ -14,6 +14,7 @@ def get_display_data(num_pairs, num_2_pairs, num_flushes, num_high_cards, number
     :param number_items: the number of times that the poker game was simulated
     :return: list of card data in order with percentages
     """
+
     return [number_items, num_pairs, num_pairs / number_items * 100, num_2_pairs, num_2_pairs / number_items * 100,
             num_flushes, num_flushes / number_items * 100, num_high_cards, num_high_cards / number_items * 100]
 
@@ -22,6 +23,7 @@ def print_headers():
     """
     Print the header text in a designated format
     """
+
     print("{:>10}  {:>8}  {:^5}  {:>10}  {:^5}  {:>10}  {:^5}  {:>10}  {:^5}".format(
         "# of hands", "pairs", "%", "2 pairs", "%", "flushes", "%", "high card", "%"
     ))

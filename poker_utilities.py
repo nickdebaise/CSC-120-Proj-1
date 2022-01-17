@@ -12,6 +12,7 @@ def sort_by_value(hand):
     :param hand: the hand or deck (list) of card
     :return: nothing
     """
+
     hand.sort(key=lambda card: card_utils.get_value(card))
 
 
@@ -22,6 +23,7 @@ def put_in_dict(hand):
     :param hand: standard 5 card poker hand
     :return: dict with keys as card values and values as number of that card in hand
     """
+
     dict = {}
 
     for card in hand:
@@ -89,6 +91,7 @@ def classify_flush(hand):
     :param hand:
     :return:
     """
+
     possible_flush = is_continuous_hand(hand)
     if possible_flush is None:
         return False

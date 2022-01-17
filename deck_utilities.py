@@ -12,6 +12,7 @@ def get_deck():
     Create and return a list of 52 standard playing cards
     :return: a list of cards
     """
+
     deck = []
 
     for i in range(1, 5):
@@ -27,6 +28,7 @@ def shuffle(deck):
     :param deck: a list of cards
     :return: the newly randomized list
     """
+
     for i in range(0, 52):
         ind = random.randint(0, 51)
 
@@ -44,6 +46,7 @@ def deal(deck):
     :param deck: the deck (list) of cards
     :return: a card
     """
+
     return deck.pop(random.randint(0, len(deck) - 1))
 
 
@@ -54,6 +57,7 @@ def deal_hand(deck, num_of_cards=5):
     :param num_of_cards: the number of cards to deal
     :return: a list of the cards from the top of the deck
     """
+
     hand = []
     for _ in range(0, num_of_cards):
         hand.append(deal(deck))
@@ -67,6 +71,7 @@ def print_as_str(deck):
     :param deck: the list of cards
     :return: a prettified print-ready string
     """
+
     return " | ".join([cards.as_str(card) for card in deck])
 
 
