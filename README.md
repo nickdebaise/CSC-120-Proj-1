@@ -1,4 +1,4 @@
-# 7-Card-Stud-Poker
+# Probability of Poker Hands
 
 ### About
 
